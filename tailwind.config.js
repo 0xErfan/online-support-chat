@@ -7,5 +7,10 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('ch', '& > *');
+      addVariant('ch-hover', '& > *:hover');
+    }
+  ],
 }
