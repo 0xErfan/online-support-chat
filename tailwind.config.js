@@ -5,7 +5,10 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: { 'gray': '1px solid rgba(0, 0, 0, 0.05)' },
+      boxShadow: { 'border': 'rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.06) 0px 2px 8px' }
+    },
   },
   plugins: [
     function ({ addVariant }) {
