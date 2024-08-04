@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.homePageBgImage {
+    @apply bg-cover bg-center w-full absolute top-0 h-[318px];
+    background-image: url('../homePageImage.png');
+}
+
+.grayBorder {
+    border-top: 1px solid rgb(238, 238, 238)
+}

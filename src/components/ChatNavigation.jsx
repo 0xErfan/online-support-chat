@@ -1,15 +1,12 @@
-import { useState } from "react";
 import { helpSvgs, homeSvgs, messageSvgs, newsSvgs } from "../svgFiles";
 
 const links = ['home', 'messages', 'help', 'news']
 const linksSvg = [homeSvgs, messageSvgs, helpSvgs, newsSvgs]
 
-const ChatNavigation = () => {
-
-    const [activeLink, setActiveLink] = useState('')
+const ChatNavigation = ({ activeLink, setActiveLink }) => {
 
     return (
-        <div className='h-20 w-full bg-white mt-auto flex ch:flex-1 shadow-border ch:text-center items-center justify-evenly'>
+        <div className='h-20 w-full bg-white absolute right-0 left-0 bottom-0 mt-auto flex ch:flex-1 shadow-border ch:text-center items-center justify-evenly z-[9999]'>
 
             {
                 links.map((link, index) =>
@@ -30,4 +27,4 @@ const ChatNavigation = () => {
     )
 }
 
-export default ChatNavigation
+export default ChatNavigation;
