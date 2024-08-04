@@ -1,17 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import ChatHomePage from './ChatHomePage'
+import HomePage from './HomePage'
+import NewsPage from './NewsPage'
 
 const ActiveLink = ({ activeLink }) => {
 
-    const [pageContent, setPageContent] = useState(<div></div>)
+    const [pageContent, setPageContent] = useState(null)
 
     useEffect(() => {
         switch (activeLink) {
             case 'home': {
-                setPageContent(<ChatHomePage />)
+                setPageContent(<HomePage />)
                 break;
             }
-            default: setPageContent(<div></div>)
+            case 'news': {
+                setPageContent(<NewsPage />)
+                break;
+            }
+            default: setPageContent(null)
         }
     }, [activeLink])
 

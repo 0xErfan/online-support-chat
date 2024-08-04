@@ -1,7 +1,7 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 
-const ChatHomePage = () => {
+const HomePage = () => {
     return (
         <div className="relative h-full">
 
@@ -93,7 +93,7 @@ const ChatHomePage = () => {
     )
 }
 
-export default ChatHomePage
+export default HomePage
 
 const HomeBoxLayout = ({ children }) => {
     return (
