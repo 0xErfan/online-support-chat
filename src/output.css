@@ -608,6 +608,10 @@ video {
   inset: 0px;
 }
 
+.-bottom-6 {
+  bottom: -1.5rem;
+}
+
 .-right-\[400px\] {
   right: -400px;
 }
@@ -652,6 +656,10 @@ video {
   z-index: 9999;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .-mt-\[43px\] {
   margin-top: -43px;
 }
@@ -680,16 +688,17 @@ video {
   margin-top: auto;
 }
 
-.mb-3 {
-  margin-bottom: 0.75rem;
-}
-
 .flex {
   display: flex;
 }
 
 .grid {
   display: grid;
+}
+
+.size-10 {
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .size-12 {
@@ -720,6 +729,11 @@ video {
 .size-8 {
   width: 2rem;
   height: 2rem;
+}
+
+.size-\[14px\] {
+  width: 14px;
+  height: 14px;
 }
 
 .size-\[25px\] {
@@ -764,16 +778,12 @@ video {
   max-height: 140px;
 }
 
-.max-h-\[624px\] {
-  max-height: 624px;
-}
-
-.max-h-\[624\] {
-  max-height: 624;
-}
-
 .max-h-\[580px\] {
   max-height: 580px;
+}
+
+.max-h-\[624px\] {
+  max-height: 624px;
 }
 
 .w-\[400px\] {
@@ -784,8 +794,16 @@ video {
   width: 100%;
 }
 
+.max-w-\[157px\] {
+  max-width: 157px;
+}
+
 .shrink-0 {
   flex-shrink: 0;
+}
+
+.basis-\[90\%\] {
+  flex-basis: 90%;
 }
 
 .cursor-pointer {
@@ -844,10 +862,6 @@ video {
   gap: 1px;
 }
 
-.gap-3 {
-  gap: 0.75rem;
-}
-
 .overflow-auto {
   overflow: auto;
 }
@@ -886,9 +900,19 @@ video {
   background-color: rgb(0 0 0 / 0.8);
 }
 
+.bg-red-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+}
+
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
 .bg-center {
@@ -955,16 +979,17 @@ video {
   padding-bottom: 1rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
-}
-
-.pb-3 {
-  padding-bottom: 0.75rem;
+.py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .pb-4 {
   padding-bottom: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-left {
@@ -1091,6 +1116,13 @@ video {
 
 .ch\:z-10 > * {
   z-index: 10;
+}
+
+.ch\:line-clamp-1 > * {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .ch\:line-clamp-2 > * {

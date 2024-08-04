@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import HomePage from './HomePage'
 import NewsPage from './NewsPage'
+import MessagesPage from './MessagesPage'
 
 const ActiveLink = ({ activeLink }) => {
 
@@ -14,6 +15,10 @@ const ActiveLink = ({ activeLink }) => {
             }
             case 'news': {
                 setPageContent(<NewsPage />)
+                break;
+            }
+            case 'messages': {
+                setPageContent(<MessagesPage />)
                 break;
             }
             default: setPageContent(null)

@@ -18,7 +18,7 @@ const NewsCard = ({ link, labels, cardTitle, cardBody }) => {
 
                 <div className='grid grid-cols-3 gap-2 ch:bg-black/10 text-black ch:p-[3px] text-[14px] ch:rounded-xl text-center'>
                     {
-                        labels.map(text => <p>{text}</p>)
+                        labels.map(text => <p key={text}>{text}</p>)
                     }
                 </div>
 
