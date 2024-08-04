@@ -14,7 +14,10 @@ function App() {
             {/* main chat container */}
             <nav className={`fixed ${isChatOpen ? 'opacity-100 right-5 h-[704px]' : '-right-[400px] opacity-0 h-0'} bottom-24 w-[400px] rounded-2xl bg-white z-[999999] overflow-hidden duration-300 ease-in-out transition-all`}>
                 <div className="size-full flex items-center justify-center">
-                    <ActiveLink activeLink={activeLink} />
+                    <ActiveLink
+                        setActiveLink={setActiveLink}
+                        activeLink={activeLink}
+                    />
                     <ChatNavigation setActiveLink={link => setActiveLink(link)} activeLink={activeLink} />
                 </div>
             </nav>

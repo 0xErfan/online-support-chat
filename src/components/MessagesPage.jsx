@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io"
 
-const MessagesPage = () => {
+const MessagesPage = ({ setActiveLink }) => {
     return (
         <div className='mb-auto w-full max-h-[580px] relative h-full'>
 
@@ -44,7 +44,7 @@ const MessagesPage = () => {
             </div>
 
             {/* ask me a qs button */}
-            <button className="absolute right-0 left-0 -bottom-6 max-w-[157px] cursor-pointer w-full rounded-[10px] m-auto bg-black text-white">
+            <button onClick={() => setActiveLink('finChat')} className="absolute right-0 left-0 -bottom-6 max-w-[157px] cursor-pointer w-full rounded-[10px] m-auto bg-black text-white">
                 <div className="flex items-center justify-between text-center gap-2 py-[10px] px-4">
                     <p className="text-[14px] font-bold">Ask a question</p>
                     <svg

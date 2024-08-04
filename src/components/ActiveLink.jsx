@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import HomePage from './HomePage'
 import NewsPage from './NewsPage'
 import MessagesPage from './MessagesPage'
 import HelpPage from './HelpPage'
+import FinChat from './FinChat'
 
-const ActiveLink = ({ activeLink }) => {
+const ActiveLink = ({ activeLink, setActiveLink }) => {
 
     const [pageContent, setPageContent] = useState(null)
 
     useEffect(() => {
         switch (activeLink) {
             case 'home': {
-                setPageContent(<HomePage />)
+                setPageContent(<HomePage setActiveLink = { setActiveLink } />)
                 break;
             }
             case 'news': {
@@ -19,11 +20,15 @@ const ActiveLink = ({ activeLink }) => {
                 break;
             }
             case 'messages': {
-                setPageContent(<MessagesPage />)
+                setPageContent(<MessagesPage setActiveLink={setActiveLink} />)
                 break;
             }
             case 'help': {
                 setPageContent(<HelpPage />)
+                break;
+            }
+            case 'finChat': {
+                setPageContent(<FinChat />)
                 break;
             }
             default: setPageContent(null)
