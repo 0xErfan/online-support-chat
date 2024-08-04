@@ -12,13 +12,15 @@ const ChatNavigation = ({ activeLink, setActiveLink }) => {
                 links.map((link, index) =>
                     <div
                         onClick={() => { setActiveLink(link) }}
-                        className="flex flex-col items-center transition-all justify-center gap-1 cursor-pointer"
+                        className="flex flex-col items-center transition-all justify-center gap-1 cursor-pointer text-[14px]"
                         key={link}
                     >
                         <div className="size-[25px] ch:size-full ch:transition-all">
                             {linksSvg[index][activeLink == link ? 1 : 0]}
                         </div>
-                        <p className={`text-[15px] transition-all duration-75 ${activeLink == link ? 'text-black font-bold' : 'text-black/70'}`}>{link}</p>
+                        <p className={`text-[14px] transition-all duration-75 ${activeLink == link ? 'text-black font-bold' : 'text-black/70'}`}>
+                            {link[0].toUpperCase() + link.slice(1)}
+                        </p>
                     </div>
                 )
             }
