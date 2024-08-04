@@ -31,7 +31,7 @@ const MessagesPage = () => {
                             <div className='flex items-center justify-between gap-2 '>
                                 <div className='flex flex-col gap-1 text-left ch:line-clamp-1 text-[14px]'>
                                     <p>Hi 👋 How can I help you?</p>
-                                    <p className="text-gray">Intercom - 1h ago</p> {/* use dynamic time prop here for the date */}
+                                    <p className="text-gray">Fin - 1h ago</p> {/* use dynamic time prop here for the date */}
                                 </div>
                                 <IoIosArrowForward className="shrink-0 text-black size-[14px]" />
                             </div>
