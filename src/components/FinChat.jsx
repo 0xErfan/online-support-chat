@@ -8,6 +8,16 @@ const FinChat = ({ setActiveLink }) => {
     const [message, setMessage] = useState('')
     const [userMessage, setUserMessage] = useState([])
 
+    const sendMessage = () => {
+
+        const userMessage = message.trim()
+
+        if (userMessage.length) {
+            setUserMessage(prev => [...prev, userMessage])
+            setMessage('')
+        }
+    }
+
     return (
         <div className="h-full w-full mb-auto relative">
 
@@ -31,7 +41,14 @@ const FinChat = ({ setActiveLink }) => {
 
                 <div className="px-5 mt-10 space-y-3 pb-20">
                     {
-                        userMessage.map(msg => <div className="p-4 rounded-[10px] bg-black text-center max-w-fit w-full ml-auto text-white text-[14px]" key={msg}>{msg}</div>)
+                        userMessage.map(msg =>
+                            <div
+                                key={msg}
+                                className="p-4 rounded-[10px] bg-black text-center max-w-fit w-full ml-auto text-white text-[14px]"
+                            >
+                                {msg}
+                            </div>
+                        )
                     }
                 </div>
 
@@ -39,6 +56,7 @@ const FinChat = ({ setActiveLink }) => {
 
 
             <div className="sticky bottom-4 text-[14px] px-4">
+
                 <div className={`flex items-center gap-2 justify-between h-12 mt-auto bg-white rounded-full py-1 px-3 ${message.trim().length ? 'border-2 border-black' : 'shadow-border'}`}>
 
                     <input
@@ -50,13 +68,22 @@ const FinChat = ({ setActiveLink }) => {
                     />
 
                     <div className="flex items-center gap-3 text-gray flex-1">
+
                         <MdOutlineEmojiEmotions className="size-5 cursor-pointer" />
-                        <div onClick={() => { message.trim().length && setUserMessage(prev => [...prev, message]); setMessage('') }} className={`size-8 rounded-full transition-all ${message.trim().length ? 'bg-black text-white' : 'bg-black/10'}  flex items-center justify-center cursor-pointer`}>
+
+                        <div
+                            onClick={sendMessage}
+                            className={`size-8 rounded-full transition-all ${message.trim().length ? 'bg-black text-white' : 'bg-black/10'}  flex items-center justify-center cursor-pointer`}
+                        >
                             <FaArrowUp className="size-[14px]" />
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
     )
 }
