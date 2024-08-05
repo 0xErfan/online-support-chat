@@ -28,7 +28,7 @@ const ActiveLink = ({ activeLink, setActiveLink }) => {
                 break;
             }
             case 'finChat': {
-                setPageContent(<FinChat />)
+                setPageContent(<FinChat setActiveLink={setActiveLink} />)
                 break;
             }
             default: setPageContent(null)
