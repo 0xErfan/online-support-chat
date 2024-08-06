@@ -11,12 +11,14 @@ const MessagesPage = ({ setActiveLink }) => {
                 <div className="flex items-center flex-col">
 
                     <PreviousChat
+                        setActiveLink={setActiveLink}
                         message={'Hi, can you gimme more info about your problem for better guidelines?'}
                         time={'21/12/12'}
                         key={'random'}
                     />
 
                     <PreviousChat
+                        setActiveLink={setActiveLink}
                         message={'Hi, can you gimme more info about your problem for better guidelines?'}
                         time={'21/12/12'}
                         key={'random'}
@@ -67,9 +69,9 @@ const MessagesPage = ({ setActiveLink }) => {
 
 export default MessagesPage
 
-const PreviousChat = ({ message, time }) => {
+const PreviousChat = ({ message, time, setActiveLink }) => {
     return (
-        <div className='flex items-center justify-between gap-2 py-3 px-5 cursor-pointer grayBorder'>
+        <div onClick={() => setActiveLink('intercomChat')} className='flex items-center justify-between gap-2 py-3 px-5 cursor-pointer grayBorder'>
             <div className='flex flex-col gap-1 text-left ch:line-clamp-1 text-[14px]'>
                 <p>{message}</p>
                 <p className="text-gray">Intercom - 1h ago</p> {/* use dynamic time prop here for the date */}

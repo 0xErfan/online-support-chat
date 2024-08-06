@@ -4,6 +4,7 @@ import NewsPage from './NewsPage'
 import MessagesPage from './MessagesPage'
 import HelpPage from './HelpPage'
 import FinChat from './FinChat'
+import IntercomChat from './IntercomChat'
 
 const ActiveLink = ({ activeLink, setActiveLink }) => {
 
@@ -12,7 +13,7 @@ const ActiveLink = ({ activeLink, setActiveLink }) => {
     useEffect(() => {
         switch (activeLink) {
             case 'home': {
-                setPageContent(<HomePage setActiveLink = { setActiveLink } />)
+                setPageContent(<HomePage setActiveLink={setActiveLink} />)
                 break;
             }
             case 'news': {
@@ -29,6 +30,10 @@ const ActiveLink = ({ activeLink, setActiveLink }) => {
             }
             case 'finChat': {
                 setPageContent(<FinChat setActiveLink={setActiveLink} />)
+                break;
+            }
+            case 'intercomChat': {
+                setPageContent(<IntercomChat setActiveLink={setActiveLink} />)
                 break;
             }
             default: setPageContent(null)
