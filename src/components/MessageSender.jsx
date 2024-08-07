@@ -1,5 +1,4 @@
 import EmojiPicker from 'emoji-picker-react';
-import Picker from 'emoji-picker-react';
 import { useState } from 'react'
 import { FaArrowUp } from 'react-icons/fa'
 import { MdOutlineEmojiEmotions } from 'react-icons/md'
@@ -84,4 +83,4 @@ const MessageSender = ({ message: messageText, sendMessage }) => {
     )
 }
 
-export default MessageSender
+export default MessageSender;

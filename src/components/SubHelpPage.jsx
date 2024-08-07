@@ -1,13 +1,10 @@
 import { IoSearch } from "react-icons/io5";
-import { IoIosArrowForward } from "react-icons/io";
 import { helpCollections as collections } from '../helpCollections'
-import { useContext } from "react";
-import { ChatContext } from "./Providers/chat";
 import CollectionsData from "./CollectionsData";
 
 const helpCollections = collections
 
-const HelpPage = () => {
+const SubHelpPage = () => {
 
     return (
         <div className='mb-auto w-full relative h-full overflow-x-hidden'>
@@ -41,4 +38,4 @@ const HelpPage = () => {
     )
 }
 
-export default HelpPage;
+export default SubHelpPage;

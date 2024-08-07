@@ -2,13 +2,16 @@ import { IoIosArrowBack } from "react-icons/io";
 import FinMessage from "./FinMessage";
 import UserMessage from "./UserMessage";
 import MessageSender from "./MessageSender";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { ChatContext } from "./Providers/chat";
 
-const IntercomChat = ({ setActiveLink }) => {
+const IntercomChat = () => {
 
     const [userMessage, setUserMessage] = useState('')
     const [messages, setMessages] = useState([])
     const lastMessageRef = useRef(null)
+
+    const { state: { prevPage }, updater } = useContext(ChatContext)
 
     const sendMessage = text => {
         setMessages(prev => [...prev, text])
@@ -22,8 +25,14 @@ const IntercomChat = ({ setActiveLink }) => {
         <div className='mb-auto w-full relative h-full ch:overflow-x-hidden'>
 
             <div className='flex items-center bg-black'>
-                <IoIosArrowBack onClick={() => setActiveLink('home')} className="text-white cursor-pointer size-6 ml-4" />
+
+                <IoIosArrowBack
+                    onClick={() => updater('activePage', prevPage)}
+                    className="text-white cursor-pointer size-6 ml-4"
+                />
+
                 <p className='h-[64px] flex items-center justify-center w-full p-3 mr-7 text-center bg-black text-white text-xl font-bold'>Intercom</p>
+
             </div>
 
             <div className="overflow-y-auto max-h-[542px] h-full pb-4 mt-4">

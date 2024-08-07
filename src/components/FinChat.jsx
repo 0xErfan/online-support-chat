@@ -1,11 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import FinMessage from './FinMessage'
 import UserMessage from "./UserMessage";
 import MessageSender from "./MessageSender";
+import { ChatContext } from "./Providers/chat";
 
 
-const FinChat = ({ setActiveLink }) => {
+const FinChat = () => {
+
+    const { state: { prevPage }, updater } = useContext(ChatContext)
 
     const [message, setMessage] = useState('')
     const [userMessage, setUserMessage] = useState([])
@@ -28,7 +31,10 @@ const FinChat = ({ setActiveLink }) => {
 
             <div className="max-h-[625px] overflow-auto overflow-x-hidden h-full">
 
-                <div onClick={() => setActiveLink('home')} className="flex mb-auto p-2 text-black font-bold">
+                <div
+                    onClick={() => {updater('activePage', prevPage); console.log(prevPage)}}
+                    className="flex mb-auto p-2 text-black font-bold"
+                >
                     <IoIosArrowBack className="size-12 p-[13px] rounded-[10px] transition-all cursor-pointer hover:bg-black/10" />
                     <h4 className="ml-32 mt-3 text-[18px]">Fin</h4>
                 </div>

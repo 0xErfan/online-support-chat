@@ -1,19 +1,21 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import HomePage from './HomePage'
 import NewsPage from './NewsPage'
 import MessagesPage from './MessagesPage'
 import HelpPage from './HelpPage'
 import FinChat from './FinChat'
 import IntercomChat from './IntercomChat'
+import { ChatContext } from './Providers/chat'
 
-const ActiveLink = ({ activeLink, setActiveLink }) => {
+const ActivePage = () => {
 
     const [pageContent, setPageContent] = useState(null)
+    const { state: { activePage } } = useContext(ChatContext)
 
     useEffect(() => {
-        switch (activeLink) {
+        switch (activePage) {
             case 'home': {
-                setPageContent(<HomePage setActiveLink={setActiveLink} />)
+                setPageContent(<HomePage />)
                 break;
             }
             case 'news': {
@@ -21,28 +23,28 @@ const ActiveLink = ({ activeLink, setActiveLink }) => {
                 break;
             }
             case 'messages': {
-                setPageContent(<MessagesPage setActiveLink={setActiveLink} />)
+                setPageContent(<MessagesPage />)
                 break;
             }
             case 'help': {
-                setPageContent(<HelpPage setActiveLink={setActiveLink} />)
+                setPageContent(<HelpPage />)
                 break;
             }
             case 'finChat': {
-                setPageContent(<FinChat setActiveLink={setActiveLink} />)
+                setPageContent(<FinChat />)
                 break;
             }
             case 'intercomChat': {
-                setPageContent(<IntercomChat setActiveLink={setActiveLink} />)
+                setPageContent(<IntercomChat />)
                 break;
             }
             case 'sub-help-collection': {
-                setPageContent(<HelpPage isSubCollection={true} setActiveLink={setActiveLink} />)
+                setPageContent(<HelpPage />)
                 break;
             }
             default: setPageContent(null)
         }
-    }, [activeLink])
+    }, [activePage])
 
     return (
         <>
@@ -51,4 +53,4 @@ const ActiveLink = ({ activeLink, setActiveLink }) => {
     )
 }
 
-export default ActiveLink
+export default ActivePage

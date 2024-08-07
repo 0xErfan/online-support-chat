@@ -1,6 +1,11 @@
 import { IoIosArrowForward } from "react-icons/io"
+import { ChatContext } from "./Providers/chat"
+import { useContext } from "react"
 
-const MessagesPage = ({ setActiveLink }) => {
+const MessagesPage = () => {
+
+    const { updater } = useContext(ChatContext)
+
     return (
         <div className='mb-auto w-full max-h-[580px] relative h-full'>
 
@@ -11,13 +16,13 @@ const MessagesPage = ({ setActiveLink }) => {
                 <div className="flex items-center flex-col">
 
                     <PreviousChat
-                        setActiveLink={setActiveLink}
+                        setActivePage={updater}
                         message={'Hi, can you gimme more info about your problem for better guidelines?'}
                         time={'21/12/12'}
                         key={'random'}
                     />
 
-                    <div onClick={() => setActiveLink('finChat')} className="flex items-center justify-start w-full grayBorder gap-2 py-3 px-5 cursor-pointer">
+                    <div onClick={() => updater('activePage', 'finChat')} className="flex items-center justify-start w-full grayBorder gap-2 py-3 px-5 cursor-pointer">
 
                         <img className='object-contain bg-center size-10' src="./logo-dark.png" alt="site logo" />
 
@@ -39,7 +44,7 @@ const MessagesPage = ({ setActiveLink }) => {
             </div>
 
             {/* ask me a qs button */}
-            <button onClick={() => setActiveLink('finChat')} className="absolute right-0 left-0 -bottom-6 max-w-[157px] cursor-pointer w-full rounded-[10px] m-auto bg-black text-white">
+            <button onClick={() => updater('activePage', 'finChat')} className="absolute right-0 left-0 -bottom-6 max-w-[157px] cursor-pointer w-full rounded-[10px] m-auto bg-black text-white">
                 <div className="flex items-center justify-between text-center gap-2 py-[10px] px-4">
                     <p className="text-[14px] font-bold">Ask a question</p>
                     <svg
@@ -62,9 +67,9 @@ const MessagesPage = ({ setActiveLink }) => {
 
 export default MessagesPage
 
-const PreviousChat = ({ message, time, setActiveLink }) => {
+const PreviousChat = ({ message, time, setActivePage }) => {
     return (
-        <div onClick={() => setActiveLink('intercomChat')} className='flex items-center justify-between gap-2 py-3 px-5 cursor-pointer grayBorder'>
+        <div onClick={() => setActivePage('activePage', 'intercomChat')} className='flex items-center justify-between gap-2 py-3 px-5 cursor-pointer grayBorder'>
             <div className='flex flex-col gap-1 text-left ch:line-clamp-1 text-[14px]'>
                 <p>{message}</p>
                 <p className="text-gray">Intercom - 1h ago</p> {/* use dynamic time prop here for the date */}

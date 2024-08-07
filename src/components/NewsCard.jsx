@@ -3,7 +3,11 @@ import { IoIosArrowForward } from 'react-icons/io';
 const NewsCard = ({ link, labels, cardTitle, cardBody }) => {
 
     return (
-        <div data-aos='zoom-out' aos-duration={300} className='rounded-[10px] shadow-border overflow-hidden'>
+        <div
+            data-aos='zoom'
+            aos-duration={300}
+            className='rounded-[10px] shadow-border overflow-hidden'
+        >
 
             <div className='max-h-[140px] h-full w-full'>
                 <img

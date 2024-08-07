@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import ChatNavigation from "./components/ChatNavigation";
-import ActiveLink from "./components/ActiveLink";
+import ActivePage from "./components/ActivePage";
 import Aos from "aos";
+import { ChatContext } from "./components/Providers/chat";
 import 'aos/dist/aos.css'
 
 
 function App() {
 
-    const [isChatOpen, setIsChatOpen] = useState(true)
-    const [activeLink, setActiveLink] = useState('help')
+    const { state: { isChatOpen }, updater } = useContext(ChatContext)
 
     useEffect(() => { Aos.init() }, [])
 
@@ -19,18 +19,15 @@ function App() {
             {/* main chat container */}
             <nav className={`fixed ${isChatOpen ? 'opacity-100 right-5 h-[704px]' : '-right-[400px] opacity-0 h-0'} bottom-24 w-[400px] rounded-2xl bg-white z-[999999] overflow-hidden duration-300 ease-in-out transition-all`}>
                 <div className="size-full flex items-center justify-center">
-                    <ActiveLink
-                        setActiveLink={setActiveLink}
-                        activeLink={activeLink}
-                    />
-                    <ChatNavigation setActiveLink={link => setActiveLink(link)} activeLink={activeLink} />
+                    <ActivePage />
+                    <ChatNavigation />
                 </div>
             </nav>
             {/* main chat container */}
 
 
             {/* open-close-chat button */}
-            <button onClick={() => setIsChatOpen(prev => !prev)} className="fixed active:scale-90 size-12 rounded-full bg-black right-5 flex items-center justify-center ch:transition-all bottom-5 z-[999999]">
+            <button onClick={() => updater('isChatOpen', !isChatOpen)} className="fixed active:scale-90 size-12 rounded-full bg-black right-5 flex items-center justify-center ch:transition-all bottom-5 z-[999999]">
                 {
                     isChatOpen
                         ?

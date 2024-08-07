@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
+import { ChatContext } from "./Providers/chat";
 
-const HomePage = ({ setActiveLink }) => {
+const HomePage = () => {
+
+    const { updater } = useContext(ChatContext)
+
     return (
         <div className="relative h-full">
 
@@ -31,7 +36,7 @@ const HomePage = ({ setActiveLink }) => {
                     {/* <RecentMessage/> */}
 
                     <HomeBoxLayout>
-                        <div onClick={() => setActiveLink('finChat')} className="flex items-center justify-between p-4 cursor-pointer">
+                        <div onClick={() => updater('activePage', 'finChat')} className="flex items-center justify-between p-4 cursor-pointer">
                             <p>Ask a question</p>
                             <div className='flex items-center gap-2'>
                                 <img className='object-contain bg-center size-6' src="./logo-dark.png" alt="site logo" />
