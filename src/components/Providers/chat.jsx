@@ -3,6 +3,7 @@ import { createContext, useEffect, useState } from "react"
 const initialState = {
     activePage: 'home',
     prevPage: 'home',
+    subHelpCollections: {},
     isChatOpen: true
 }
 

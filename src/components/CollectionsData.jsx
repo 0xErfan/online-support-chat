@@ -2,13 +2,18 @@ import { IoIosArrowForward } from "react-icons/io";
 import { useContext } from "react";
 import { ChatContext } from "./Providers/chat";
 
-const CollectionsData = ({ title, body, numberOfArticles }) => {
+const CollectionsData = ({ title, body, numberOfArticles, sub_articles }) => {
 
     const { updater } = useContext(ChatContext)
 
+    const seeSubCollections = () => {
+        updater('activePage', 'sub-help-collection')
+        updater('sub_articles', sub_articles)
+    }
+
     return (
         <div
-            onClick={() => updater('activePage', 'sub-help-collection')}
+            onClick={seeSubCollections}
             className="flex items-center justify-between hover:bg-black/10 transition-all cursor-pointer px-5"
         >
 

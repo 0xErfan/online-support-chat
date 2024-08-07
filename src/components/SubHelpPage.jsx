@@ -1,13 +1,22 @@
+import { useContext } from "react";
+import { IoIosArrowForward } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
+import { ChatContext } from "./Providers/chat";
 
 const SubHelpPage = () => {
+
+    const { state: { prevPage, subHelpCollections }, updater } = useContext(ChatContext)
+    console.log(subHelpCollections)
 
     return (
         <div className='mb-auto w-full relative h-full overflow-x-hidden'>
 
             <div className='flex flex-col gap-4 items-center justify-center w-full p-3 text-center bg-black text-white text-xl'>
 
-                <p className="font-bold w-full m-auto text-center">Help</p>
+                <div className={`flex justify-start items-center w-full gap-36`}>
+                    <IoIosArrowForward onClick={() => updater('activePage', prevPage)} className="rotate-180 cursor-pointer" />
+                    <p className="font-bold">Help</p>
+                </div>
 
                 <div className="flex items-center w-full justify-between text-black bg-white rounded-[10px] text-[14px] p-2">
                     <input
