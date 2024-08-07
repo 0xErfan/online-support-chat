@@ -16,10 +16,10 @@ const ChatNavigation = ({ activeLink, setActiveLink }) => {
                         key={link}
                     >
                         <div className="size-[25px] ch:size-full ch:transition-all">
-                            {linksSvg[index][activeLink == link ? 1 : 0]}
+                            {linksSvg[index][activeLink.includes(link) ? 1 : 0]}
                         </div>
 
-                        <p className={`text-[14px] transition-all duration-75 ${activeLink == link ? 'text-black font-bold' : 'text-black/70'}`}>
+                        <p className={`text-[14px] transition-all duration-75 ${activeLink.includes(link) ? 'text-black font-bold' : 'text-black/70'}`}>
                             {link[0].toUpperCase() + link.slice(1)}
                         </p>
 

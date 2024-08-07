@@ -36,6 +36,10 @@ const ActiveLink = ({ activeLink, setActiveLink }) => {
                 setPageContent(<IntercomChat setActiveLink={setActiveLink} />)
                 break;
             }
+            case 'sub-help-collection': {
+                setPageContent(<HelpPage isSubCollection={true} setActiveLink={setActiveLink} />)
+                break;
+            }
             default: setPageContent(null)
         }
     }, [activeLink])

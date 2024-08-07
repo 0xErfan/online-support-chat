@@ -4,7 +4,7 @@ import { helpCollections as collections } from '../helpCollections'
 
 const helpCollections = collections
 
-const HelpPage = ({ isSubCollection, setActiveLink }) => {
+const HelpPage = ({ isSubCollection = false, setActiveLink }) => {
 
     return (
         <div className='mb-auto w-full relative h-full'>
@@ -30,12 +30,12 @@ const HelpPage = ({ isSubCollection, setActiveLink }) => {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-3 my-3 justify-start px-5 max-h-[512px] overflow-auto pb-12">
+            <div className="flex flex-col justify-start max-h-[512px] overflow-auto pb-3">
 
-                <div className="text-[16px] font-bold"> {Array.from(helpCollections).length} collections</div>
+                <div className="text-[16px] font-bold py-4 px-5"> {Array.from(helpCollections).length} collections </div>
 
                 {
-                    helpCollections.map(data => <CollectionsData key={data.title} {...data} />)
+                    helpCollections.map(data => <CollectionsData key={data.title} setActiveLink={setActiveLink} {...data} />)
                 }
 
             </div>
@@ -44,13 +44,13 @@ const HelpPage = ({ isSubCollection, setActiveLink }) => {
     )
 }
 
-export default HelpPage
+export default HelpPage;
 
-const CollectionsData = ({ title, body, numberOfArticles }) => {
+const CollectionsData = ({ title, body, numberOfArticles, setActiveLink }) => {
     return (
-        <div className="flex items-center justify-between cursor-pointer">
+        <div onClick={() => setActiveLink('sub-help-collection')} className="flex items-center justify-between hover:bg-black/10 transition-all cursor-pointer px-5">
 
-            <div className="flex flex-col gap-1 text-[14px] grayBorder pt-2">
+            <div className="flex flex-col gap-1 text-[14px] grayBorder py-2">
                 <p className="font-bold text-black">{title}</p>
                 <p className="text-gray">{body}</p>
                 <p className="text-gray">{numberOfArticles} articles</p>
