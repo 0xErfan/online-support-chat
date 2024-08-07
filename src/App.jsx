@@ -6,13 +6,13 @@ import { ChatContext } from "./components/Providers/chat";
 
 function App() {
 
-    const { state: { isChatOpen }, updater } = useContext(ChatContext)
+    const { state: { isChatOpen, isChatExpanded }, updater } = useContext(ChatContext)
 
     return (
         <div className="flex absolute inset-0 items-center justify-center size-full bg-black/80">
 
             {/* main chat container */}
-            <nav className={`fixed ${isChatOpen ? 'opacity-100 right-5 h-[704px]' : '-right-[400px] opacity-0 h-0'} bottom-24 w-[400px] rounded-2xl bg-white z-[999999] overflow-hidden duration-300 ease-in-out transition-all`}>
+            <nav className={`fixed ${isChatOpen ? 'opacity-100 right-5' : '-right-[400px] opacity-0 h-0'} bottom-20 ${isChatExpanded ? 'w-[688px] h-[841px]' : 'w-[400px] h-[704px]'} rounded-2xl bg-white z-[999999] overflow-hidden duration-300 ease-in-out transition-all`}>
                 <div className="size-full flex items-center justify-center">
                     <ActivePage />
                     <ChatNavigation />

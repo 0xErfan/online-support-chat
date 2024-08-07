@@ -5,12 +5,14 @@ import { ChatContext } from "./Providers/chat";
 const links = ['home', 'messages', 'help', 'news']
 const linksSvg = [homeSvgs, messageSvgs, helpSvgs, newsSvgs]
 
+const pagesWithoutNavigation = ['finChat', 'intercomChat', 'searchPage']
+
 const ChatNavigation = () => {
 
     const { state: { activePage }, updater } = useContext(ChatContext)
 
     return (
-        <div className={`h-20 w-full ${(activePage == 'finChat' || activePage == 'intercomChat') && 'hidden'} bg-white absolute right-0 left-0 bottom-0 mt-auto flex ch:flex-1 shadow-border ch:text-center items-center justify-evenly z-[9999]`}>
+        <div className={`h-20 w-full ${pagesWithoutNavigation.includes(activePage) && 'hidden'} bg-white absolute right-0 left-0 bottom-0 mt-auto flex ch:flex-1 shadow-border ch:text-center items-center justify-evenly z-[9999]`}>
 
             {
                 links.map((link, index) =>

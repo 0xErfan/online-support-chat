@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
+import { ChatContext } from './Providers/chat';
 
-const NewsCard = ({ link, labels, cardTitle, cardBody }) => {
+const NewsCard = ({ labels, cardTitle, cardBody }) => {
+
+    const { updater } = useContext(ChatContext)
 
     return (
         <div className='rounded-[10px] shadow-border overflow-hidden'>
@@ -21,13 +25,16 @@ const NewsCard = ({ link, labels, cardTitle, cardBody }) => {
                     }
                 </div>
 
-                <a href={link} className='flex items-center justify-between mt-3 gap-1'>
+                <div
+                    onClick={() => updater('activePage', 'searchPage')}
+                    className='flex items-center justify-between mt-3 gap-1 cursor-pointer'
+                >
                     <div className="flex items-center flex-col ch:line-clamp-2 text-[14px]">
                         <p className="text-black">{cardTitle}</p>
                         <p className="text-gray">{cardBody}</p>
                     </div>
                     <IoIosArrowForward className="shrink-0 size-3" />
-                </a>
+                </div>
             </div>
         </div>
     )

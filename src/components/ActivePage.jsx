@@ -7,11 +7,12 @@ import FinChat from './FinChat'
 import IntercomChat from './IntercomChat'
 import { ChatContext } from './Providers/chat'
 import SubHelpPage from './SubHelpPage'
+import { SearchPage } from './SearchPage'
 
 const ActivePage = () => {
 
     const [pageContent, setPageContent] = useState(null)
-    const { state: { activePage } } = useContext(ChatContext)
+    const { state: { activePage }, updater } = useContext(ChatContext)
 
     useEffect(() => {
         switch (activePage) {
@@ -39,12 +40,20 @@ const ActivePage = () => {
                 setPageContent(<IntercomChat />)
                 break;
             }
+            case 'searchPage': {
+                setPageContent(<SearchPage />)
+                break;
+            }
             case 'sub-help-collection': {
                 setPageContent(<SubHelpPage />)
                 break;
             }
             default: setPageContent(null)
         }
+
+        // we only need expanded chat for the search page
+        activePage !== 'searchPage' && updater('isChatExpanded', false)
+        
     }, [activePage])
 
     return (

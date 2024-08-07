@@ -76,7 +76,10 @@ const HomePage = () => {
                     <HomeBoxLayout>
                         <div className="flex flex-col gap-1 p-2 text-[14px] ch:transition-all text-black">
 
-                            <div className="flex items-center justify-between py-2 px-3 rounded-md cursor-pointer bg-[#f2f2f2] hover:black/10">
+                            <div
+                                onClick={() => updater('activePage', 'searchPage')}
+                                className="flex items-center justify-between py-2 px-3 rounded-md cursor-pointer bg-[#f2f2f2] hover:black/10"
+                            >
                                 <p className="font-bold">Seach for help</p>
                                 <IoSearch />
                             </div>
@@ -109,8 +112,11 @@ const HomeBoxLayout = ({ children }) => {
 }
 
 const AutoSearch = ({ link, text }) => {
+
+    const { updater } = useContext(ChatContext)
+
     return (
-        <div className="flex items-center justify-between py-2 px-3 hover:bg-black/10 rounded-md cursor-pointer">
+        <div onClick={() => updater('activePage', 'searchPage')} className="flex items-center justify-between py-2 px-3 hover:bg-black/10 rounded-md cursor-pointer">
             <a href={link}>{text}</a>
             <IoIosArrowForward />
         </div>

@@ -3,8 +3,9 @@ import { createContext, useEffect, useState } from "react"
 const initialState = {
     activePage: 'home',
     prevPage: 'home',
-    subHelpCollections: {},
-    isChatOpen: true
+    isChatOpen: true,
+    isChatExpanded: false,
+    subHelpCollections: {}
 }
 
 export const ChatContext = createContext(initialState)
