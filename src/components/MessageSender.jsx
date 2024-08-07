@@ -36,19 +36,15 @@ const MessageSender = ({ message: messageText, sendMessage }) => {
                     placeholder="Ask a question..."
                 />
 
-                <div className='flex items-center gap-3 text-gray'>
+                <div className='flex items-center relative gap-3 text-gray'>
 
                     <MdOutlineEmojiEmotions onClick={() => setIsEmojiPickerOpen(prev => !prev)} className={`size-4 ${isEmojiPickerOpen && 'text-black'} cursor-pointer`} />
 
                     {
-                        isEmojiPickerOpen && <div className='fixed w-20 left-[1520px] top-[320px] z-[200]'>
+                        isEmojiPickerOpen && <div className='absolute w-20 right-[263px] bottom-[55px] z-[200]'>
                             <EmojiPicker
-                                autoFocusSearch={false}
                                 previewConfig={{ defaultCaption: false, defaultEmoji: false, showPreview: false }}
                                 suggestedEmojisMode={false}
-                                groupVisibility={{ flag: false }}
-                                skinTonesDisabled
-                                lazyLoadEmojis
                                 onEmojiClick={handleEmojiSelect}
                             />
                         </div>

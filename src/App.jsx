@@ -1,17 +1,12 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import ChatNavigation from "./components/ChatNavigation";
 import ActivePage from "./components/ActivePage";
-import Aos from "aos";
 import { ChatContext } from "./components/Providers/chat";
-import 'aos/dist/aos.css'
-
 
 function App() {
 
     const { state: { isChatOpen }, updater } = useContext(ChatContext)
-
-    useEffect(() => { Aos.init() }, [])
 
     return (
         <div className="flex absolute inset-0 items-center justify-center size-full bg-black/80">

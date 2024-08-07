@@ -644,10 +644,6 @@ video {
   left: 0px;
 }
 
-.left-\[1520px\] {
-  left: 1520px;
-}
-
 .right-0 {
   right: 0px;
 }
@@ -656,12 +652,68 @@ video {
   right: 1.25rem;
 }
 
+.right-\[110px\] {
+  right: 110px;
+}
+
 .top-0 {
   top: 0px;
 }
 
-.top-\[320px\] {
-  top: 320px;
+.top-\[0px\] {
+  top: 0px;
+}
+
+.right-\[210px\] {
+  right: 210px;
+}
+
+.right-\[310px\] {
+  right: 310px;
+}
+
+.right-\[290px\] {
+  right: 290px;
+}
+
+.right-\[270px\] {
+  right: 270px;
+}
+
+.right-\[265px\] {
+  right: 265px;
+}
+
+.right-\[267px\] {
+  right: 267px;
+}
+
+.right-\[263px\] {
+  right: 263px;
+}
+
+.bottom-\[200px\] {
+  bottom: 200px;
+}
+
+.bottom-\[150px\] {
+  bottom: 150px;
+}
+
+.bottom-\[120px\] {
+  bottom: 120px;
+}
+
+.bottom-\[80px\] {
+  bottom: 80px;
+}
+
+.bottom-\[60px\] {
+  bottom: 60px;
+}
+
+.bottom-\[55px\] {
+  bottom: 55px;
 }
 
 .z-0 {
@@ -699,11 +751,6 @@ video {
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
-}
-
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
 }
 
 .my-4 {
@@ -940,11 +987,6 @@ video {
   flex-basis: auto;
 }
 
-.rotate-180 {
-  --tw-rotate: 180deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .rotate-45 {
   --tw-rotate: 45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1000,10 +1042,6 @@ video {
 
 .gap-3 {
   gap: 0.75rem;
-}
-
-.gap-36 {
-  gap: 9rem;
 }
 
 .gap-4 {
@@ -1196,32 +1234,20 @@ video {
   padding-bottom: 17px;
 }
 
-.pb-12 {
-  padding-bottom: 3rem;
-}
-
 .pb-20 {
   padding-bottom: 5rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
 }
 
 .pb-4 {
   padding-bottom: 1rem;
 }
 
-.pt-2 {
-  padding-top: 0.5rem;
-}
-
 .pt-4 {
   padding-top: 1rem;
-}
-
-.pb-6 {
-  padding-bottom: 1.5rem;
-}
-
-.pb-3 {
-  padding-bottom: 0.75rem;
 }
 
 .text-left {

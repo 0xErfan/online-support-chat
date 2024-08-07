@@ -8,7 +8,6 @@ const CollectionsData = ({ title, body, numberOfArticles }) => {
 
     return (
         <div
-            data-aos="fade-right"
             onClick={() => updater('activePage', 'sub-help-collection')}
             className="flex items-center justify-between hover:bg-black/10 transition-all cursor-pointer px-5"
         >
