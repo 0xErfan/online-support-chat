@@ -25,7 +25,7 @@ const ActiveLink = ({ activeLink, setActiveLink }) => {
                 break;
             }
             case 'help': {
-                setPageContent(<HelpPage />)
+                setPageContent(<HelpPage setActiveLink={setActiveLink} />)
                 break;
             }
             case 'finChat': {

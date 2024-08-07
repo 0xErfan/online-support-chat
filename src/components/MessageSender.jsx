@@ -45,7 +45,7 @@ const MessageSender = ({ message: messageText, sendMessage }) => {
                         isEmojiPickerOpen && <div className='fixed w-20 left-[1520px] top-[320px] z-[200]'>
                             <EmojiPicker
                                 autoFocusSearch={false}
-                                previewConfig={{defaultCaption: false, defaultEmoji: false, showPreview: false}}
+                                previewConfig={{ defaultCaption: false, defaultEmoji: false, showPreview: false }}
                                 suggestedEmojisMode={false}
                                 groupVisibility={{ flag: false }}
                                 skinTonesDisabled

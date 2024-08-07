@@ -6,7 +6,7 @@ import ActiveLink from "./components/ActiveLink";
 function App() {
 
     const [isChatOpen, setIsChatOpen] = useState(true)
-    const [activeLink, setActiveLink] = useState('intercomChat')
+    const [activeLink, setActiveLink] = useState('help')
 
     return (
         <div className="flex absolute inset-0 items-center justify-center size-full bg-black/80">
