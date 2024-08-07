@@ -1,8 +1,4 @@
 import { IoSearch } from "react-icons/io5";
-import { helpCollections as collections } from '../helpCollections'
-import CollectionsData from "./CollectionsData";
-
-const helpCollections = collections
 
 const SubHelpPage = () => {
 
@@ -26,10 +22,26 @@ const SubHelpPage = () => {
 
             <div className="flex flex-col justify-start max-h-[512px] overflow-auto pb-3">
 
-                <div className="text-[16px] font-bold py-4 px-5"> {Array.from(helpCollections).length} collections </div>
+                <div className="flex flex-col w-full gap-3 text-[14px] py-4 px-5">
+
+                    <div>
+                        <p className="text-[16px] text-black font-bold">Intercom Overview</p>
+                        <p>See how your AI first-customer service solution works.</p>
+                    </div>
+
+                    <div className="flex items-center ch:flex-1 w-full text-gray justify-between">
+                        <p>22 articles by Des and 2 others</p>
+                        <div className="flex items-center justify-end ch:size-[38px] ch:-ml-2 ch:border-[3px] ch:border-white ch:rounded-full ">
+                            <img src="./randomGuy.jpeg" alt="random" />
+                            <img src="./randomGuy.jpeg" alt="random" />
+                            <img src="./randomGuy.jpeg" alt="random" />
+                        </div>
+                    </div>
+
+                </div>
 
                 {
-                    helpCollections.map(data => <CollectionsData key={data.title} {...data} />)
+                    // helpCollections.map(data => <CollectionsData key={data.title} {...data} />)
                 }
 
             </div>

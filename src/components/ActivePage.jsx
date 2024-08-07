@@ -6,6 +6,7 @@ import HelpPage from './HelpPage'
 import FinChat from './FinChat'
 import IntercomChat from './IntercomChat'
 import { ChatContext } from './Providers/chat'
+import SubHelpPage from './SubHelpPage'
 
 const ActivePage = () => {
 
@@ -39,7 +40,7 @@ const ActivePage = () => {
                 break;
             }
             case 'sub-help-collection': {
-                setPageContent(<HelpPage />)
+                setPageContent(<SubHelpPage />)
                 break;
             }
             default: setPageContent(null)
