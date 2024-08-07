@@ -7,7 +7,7 @@ const helpCollections = collections
 const HelpPage = ({ isSubCollection = false, setActiveLink }) => {
 
     return (
-        <div className='mb-auto w-full relative h-full'>
+        <div className='mb-auto w-full relative h-full overflow-x-hidden'>
 
             <div className='flex flex-col gap-4 items-center justify-center w-full p-3 text-center bg-black text-white text-xl'>
 
@@ -48,7 +48,7 @@ export default HelpPage;
 
 const CollectionsData = ({ title, body, numberOfArticles, setActiveLink }) => {
     return (
-        <div onClick={() => setActiveLink('sub-help-collection')} className="flex items-center justify-between hover:bg-black/10 transition-all cursor-pointer px-5">
+        <div data-aos="fade-right" onClick={() => setActiveLink('sub-help-collection')} className="flex items-center justify-between hover:bg-black/10 transition-all cursor-pointer px-5">
 
             <div className="flex flex-col gap-1 text-[14px] grayBorder py-2">
                 <p className="font-bold text-black">{title}</p>

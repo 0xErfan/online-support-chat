@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import ChatNavigation from "./components/ChatNavigation";
 import ActiveLink from "./components/ActiveLink";
+import Aos from "aos";
+import 'aos/dist/aos.css'
+
 
 function App() {
 
     const [isChatOpen, setIsChatOpen] = useState(true)
     const [activeLink, setActiveLink] = useState('help')
+
+    useEffect(() => { Aos.init() }, [])
 
     return (
         <div className="flex absolute inset-0 items-center justify-center size-full bg-black/80">

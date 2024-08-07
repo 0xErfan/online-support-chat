@@ -17,13 +17,6 @@ const MessagesPage = ({ setActiveLink }) => {
                         key={'random'}
                     />
 
-                    <PreviousChat
-                        setActiveLink={setActiveLink}
-                        message={'Hi, can you gimme more info about your problem for better guidelines?'}
-                        time={'21/12/12'}
-                        key={'random'}
-                    />
-
                     <div onClick={() => setActiveLink('finChat')} className="flex items-center justify-start w-full grayBorder gap-2 py-3 px-5 cursor-pointer">
 
                         <img className='object-contain bg-center size-10' src="./logo-dark.png" alt="site logo" />
