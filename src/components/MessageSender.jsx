@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { FaArrowUp } from 'react-icons/fa'
 import { MdOutlineEmojiEmotions } from 'react-icons/md'
+import { MdGif } from "react-icons/md";
+import { MdOutlineAttachFile } from "react-icons/md";
 
 const MessageSender = ({ message: messageText, sendMessage }) => {
 
@@ -27,13 +29,31 @@ const MessageSender = ({ message: messageText, sendMessage }) => {
                     placeholder="Ask a question..."
                 />
 
-                <MdOutlineEmojiEmotions className="size-5 cursor-pointer" />
+                <div className='flex items-center gap-3 text-gray'>
 
-                <div
-                    onClick={messageSender}
-                    className={`size-8 rounded-full transition-all ${message.trim().length ? 'bg-black text-white' : 'bg-black/10'}  flex items-center justify-center cursor-pointer`}
-                >
-                    <FaArrowUp className="size-[14px]" />
+                    <MdOutlineEmojiEmotions className="size-4 cursor-pointer" />
+
+                    {
+                        !message.length
+                            ?
+                            <>
+                                <MdGif className='size-6 cursor-pointer' />
+
+                                <label className='cursor-pointer' htmlFor="file">
+                                    <input className='hidden' id='file' type="file" />
+                                    <MdOutlineAttachFile className='size-5 rotate-45' />
+                                </label>
+
+                            </>
+                            : null
+                    }
+
+                    <div
+                        onClick={messageSender}
+                        className={`size-8 rounded-full transition-all ${message.trim().length ? 'bg-black text-white' : 'bg-black/10'}  flex items-center justify-center cursor-pointer`}
+                    >
+                        <FaArrowUp className="size-[14px]" />
+                    </div>
                 </div>
 
             </div>
