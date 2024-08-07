@@ -1,9 +1,6 @@
 import { IoSearch } from "react-icons/io5";
-import { IoIosArrowForward } from "react-icons/io";
-import { helpCollections as collections } from '../helpCollections'
-import { useContext } from "react";
-import { ChatContext } from "./Providers/chat";
-import CollectionsData from "./CollectionsData";
+import { helpCollections as collections } from '../../helpCollections'
+import CollectionsData from "../CollectionsData";
 
 const helpCollections = collections
 

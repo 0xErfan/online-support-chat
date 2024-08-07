@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import ChatNavigation from "./components/ChatNavigation";
-import ActivePage from "./components/ActivePage";
 import { ChatContext } from "./components/Providers/chat";
+import ActivePage from "./components/pages/ActivePage";
 
 function App() {
 

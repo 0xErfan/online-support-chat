@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
-import { ChatContext } from "./Providers/chat";
-import CollectionsData from "./CollectionsData";
+import { ChatContext } from "../Providers/chat";
+import CollectionsData from "../CollectionsData";
 
 const SubHelpPage = () => {
 

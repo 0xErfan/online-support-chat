@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
-import { ChatContext } from "./Providers/chat";
+import { ChatContext } from "../Providers/chat";
 
 const HomePage = () => {
 

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { helpSvgs, homeSvgs, messageSvgs, newsSvgs } from "../svgFiles";
+import { helpSvgs, homeSvgs, messageSvgs, newsSvgs } from "../svgFiles/svgFiles";
 import { ChatContext } from "./Providers/chat";
 
 const links = ['home', 'messages', 'help', 'news']

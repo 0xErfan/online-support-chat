@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { ChatContext } from "./Providers/chat"
+import { ChatContext } from "../Providers/chat"
 import { IoIosArrowBack } from "react-icons/io"
 import { RiExpandDiagonal2Line } from "react-icons/ri";
 import { MdOutlineLanguage } from "react-icons/md";
@@ -19,7 +19,7 @@ export const SearchPage = () => {
             <div className="flex justify-between w-full p-2">
 
                 <IoIosArrowBack
-                    onClick={() => updater('activePage', prevPage == 'news' ? 'news' : 'home')}
+                    onClick={() => updater('activePage', prevPage == 'news' ? 'news' : prevPage.includes('help') ? 'help' : 'home')}
                     className="size-12 p-[13px] rounded-[10px] transition-all cursor-pointer hover:bg-black/10"
                 />
 

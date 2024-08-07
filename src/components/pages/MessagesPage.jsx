@@ -1,5 +1,5 @@
 import { IoIosArrowForward } from "react-icons/io"
-import { ChatContext } from "./Providers/chat"
+import { ChatContext } from "../Providers/chat"
 import { useContext } from "react"
 
 const MessagesPage = () => {

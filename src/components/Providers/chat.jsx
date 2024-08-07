@@ -3,7 +3,7 @@ import { createContext, useEffect, useState } from "react"
 const initialState = {
     activePage: 'home',
     prevPage: 'home',
-    isChatOpen: true,
+    isChatOpen: false,
     isChatExpanded: false,
     subHelpCollections: {}
 }
@@ -19,7 +19,9 @@ const ChatProvider = ({ children }) => {
     }
 
     // using cleanup function of effect to get the value of activePage before its update
-    useEffect(() => () => setState(prev => ({ ...prev, prevPage: state.activePage })), [state.activePage])
+    useEffect(() => {
+        return () => setState(prev => ({ ...prev, prevPage: state.activePage }))
+    }, [state.activePage])
 
     return (
         <ChatContext.Provider value={{ state, updater }}>
