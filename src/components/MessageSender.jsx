@@ -1,3 +1,5 @@
+import EmojiPicker from 'emoji-picker-react';
+import Picker from 'emoji-picker-react';
 import { useState } from 'react'
 import { FaArrowUp } from 'react-icons/fa'
 import { MdOutlineEmojiEmotions } from 'react-icons/md'
@@ -7,10 +9,16 @@ import { MdOutlineAttachFile } from "react-icons/md";
 const MessageSender = ({ message: messageText, sendMessage }) => {
 
     const [message, setMessage] = useState(messageText)
+    const [isEmojiPickerOpen, setIsEmojiPickerOpen] = useState(false)
 
     const messageSender = () => {
         sendMessage(message)
         setMessage('')
+    }
+
+    const handleEmojiSelect = emojiData => {
+        setMessage(prev => prev += emojiData.emoji)
+        setIsEmojiPickerOpen(false)
     }
 
     return (
@@ -31,7 +39,21 @@ const MessageSender = ({ message: messageText, sendMessage }) => {
 
                 <div className='flex items-center gap-3 text-gray'>
 
-                    <MdOutlineEmojiEmotions className="size-4 cursor-pointer" />
+                    <MdOutlineEmojiEmotions onClick={() => setIsEmojiPickerOpen(prev => !prev)} className={`size-4 ${isEmojiPickerOpen && 'text-black'} cursor-pointer`} />
+
+                    {
+                        isEmojiPickerOpen && <div className='fixed w-20 left-[1520px] top-[320px] z-[200]'>
+                            <EmojiPicker
+                                autoFocusSearch={false}
+                                previewConfig={{defaultCaption: false, defaultEmoji: false, showPreview: false}}
+                                suggestedEmojisMode={false}
+                                groupVisibility={{ flag: false }}
+                                skinTonesDisabled
+                                lazyLoadEmojis
+                                onEmojiClick={handleEmojiSelect}
+                            />
+                        </div>
+                    }
 
                     {
                         !message.length
