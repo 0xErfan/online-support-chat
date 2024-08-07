@@ -1,0 +1,11 @@
+1_install the "emoji-picker-react" & "react-icons" packages
+
+
+2_in your tailwind.config file in the Plugins add
+        function ({ addVariant }) {
+            addVariant('ch', '& > *');
+            addVariant('ch-hover', '& > *:hover')
+        }
+
+
+3_wrap this chat support component to the root layout of your project
