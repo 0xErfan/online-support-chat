@@ -17,7 +17,7 @@ const CollectionsData = ({ title, body, numberOfArticles, sub_articles }) => {
             className="flex items-center justify-between hover:bg-black/10 transition-all cursor-pointer px-5"
         >
 
-            <div className="flex flex-col gap-1 text-[14px] grayBorder py-2">
+            <div className="flex flex-col gap-1 text-[14px] grayBorder py-2 w-full">
                 <p className="font-bold text-black">{title}</p>
                 <p className="text-gray">{body}</p>
                 <p className="text-gray">{numberOfArticles} articles</p>

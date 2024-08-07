@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { ChatContext } from "./Providers/chat";
+import CollectionsData from "./CollectionsData";
 
 const SubHelpPage = () => {
 
     const { state: { prevPage, subHelpCollections }, updater } = useContext(ChatContext)
-    console.log(subHelpCollections)
 
     return (
         <div className='mb-auto w-full relative h-full overflow-x-hidden'>
@@ -49,9 +49,25 @@ const SubHelpPage = () => {
 
                 </div>
 
-                {
-                    // helpCollections.map(data => <CollectionsData key={data.title} {...data} />)
-                }
+                <div className="text-[14px] grayBorder">
+                    {
+
+                        ['linkOne', 'linkTwo', 'andThree']
+                            .map(link =>
+                                <div onClick={() => updater('activePage', 'searchPage')} className="flex w-full justify-between hover:bg-black/10 transition-all py-2 px-5">
+                                    <p>{link}</p>
+                                    <IoIosArrowForward />
+                                </div>
+                            )
+                    }
+                </div>
+
+                <CollectionsData
+                    body={'body body body body'}
+                    numberOfArticles={12}
+                    title={'title title title'}
+                    key={21}
+                />
 
             </div>
 
